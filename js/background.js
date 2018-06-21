@@ -4,21 +4,26 @@ if (!$('#cost').val()) {
     $('#cost').val(1);
 }
 
+if (!$('#term').val()) {
+    $('#term').val(1);
+}
+
+$(".wysibb").prepend('<div id="fh_answers" class="text-center"></div>');
 
 function appendAnswer(val) {
-    $(".wysibb").prepend(' <span class="btn btn-default" id="fh_answer">' + val + '</span> ');
+    $("#fh_answers").append(' <span class="btn btn-default" id="fh_answer">' + val + '</span> ');
 }
 
 
 $("#cost").parent().next().html('');
 
 function appendCost(val) {
-
     $("#cost").parent().next().append(' <span class="btn btn-default" id="fh_cost">' + val + '</span> ');
 }
 
 storage.get(['answers', 'costs'], function(items) {
     if (items.answers) {
+        items.answers = items.answers.reverse();
         items.answers.forEach(function(item, i, arr) {
             appendAnswer(item);
         });
@@ -40,6 +45,5 @@ $.get(chrome.extension.getURL('/js/injected.js'),
         script.setAttribute("type", "text/javascript");
         script.innerHTML = data;
         document.getElementsByTagName("head")[0].appendChild(script);
-        document.getElementsByTagName("body")[0].setAttribute("onLoad", "injected_main();");
     }
 );
