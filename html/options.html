@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../img/icon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <title>Freelance.ru Helper</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+        }
+
+        textarea {
+            font-family: monospace;
+        }
+
+        .message {
+            height: 20px;
+            background: #eee;
+            padding: 5px;
+        }
+
+        #answer {
+            width: 97%;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message"></div>
+    <h3>Freelance.ru Helper <img src="../img/icon.png" /></h3>
+
+    <div style="background: #eee;" id="answers">
+        <h4>Варианты ответа</h4>
+    </div>
+
+    <p>
+        <a href="#" id="add_answer">Добавить вариант</a>
+        <hr />
+    </p>
+
+    <div style="background: #eee;" id="costs">
+        <h4>Варианты стоимости</h4>
+    </div>
+    <p>
+        <a href="#" id="add_cost">Добавить вариант</a>
+        <hr />
+    </p>
+    <br/>
+
+    <button class="submit">Сохранить</button>
+    <button class="reset">Сбросить</button>
+    <script src="../js/options.js"></script>
+</body>
+
+</html>

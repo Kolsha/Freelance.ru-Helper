@@ -1,0 +1,39 @@
+{
+  "name": "Freelance.ru Helper",
+  "description": "Когда лень писать одно и тоже.",
+  "version": "1.0",
+  "homepage_url": "https://kolsha.ru",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+
+  "icons": {
+
+       "32": "img/icon.png",
+       "48": "img/freelance_logo_web.png"
+
+  },
+
+  "options_page": "html/options.html",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_title": "Freelance.ru Helper",
+    "default_popup": "html/popup.html"
+  },
+
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [ "https://freelance.ru/discussion/*" ],
+      "js": [ "js/jquery-1.4.1.min.js", "js/background.js" ],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "js/injected.js"
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
