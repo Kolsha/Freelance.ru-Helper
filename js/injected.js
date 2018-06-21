@@ -1,6 +1,9 @@
-function injected_main() {
+$( document ).ready(function() {
     $('span#fh_answer').click(function(el) {
         $('#msg_body').val($(el.target).text());
+        if($('#fh_answers').attr('post_after_select') == 'true') {
+        	$('input:submit').click();
+        }
     });
 
 
@@ -8,4 +11,4 @@ function injected_main() {
         $('#cost').val($(el.target).text());
     });
 
-}
+});

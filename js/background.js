@@ -21,7 +21,12 @@ function appendCost(val) {
     $("#cost").parent().next().append(' <span class="btn btn-default" id="fh_cost">' + val + '</span> ');
 }
 
-storage.get(['answers', 'costs'], function(items) {
+storage.get(['answers', 'costs', 'post_after_select'], function(items) {
+
+    if(items.post_after_select) {
+        $('#fh_answers').attr('post_after_select', 'true');
+    }
+
     if (items.answers) {
         items.answers = items.answers.reverse();
         items.answers.forEach(function(item, i, arr) {

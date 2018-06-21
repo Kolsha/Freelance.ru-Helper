@@ -12,7 +12,7 @@ submitButton.addEventListener('click', saveChanges);
 resetButton.addEventListener('click', reset);
 
 function saveChanges() {
-    var costs = $('input').map(function() {
+    var costs = $('input#cost').map(function() {
         return this.value;
     }).get();
 
@@ -23,7 +23,8 @@ function saveChanges() {
 
     storage.set({
         'answers': answers,
-        'costs': costs
+        'costs': costs,
+        'post_after_select': $('#post_after_select').is(':checked')
     }, function() {
         message('Настройки сохранены');
     });
@@ -38,7 +39,7 @@ function appendCost(val) {
 }
 
 function loadChanges() {
-    storage.get(['answers', 'costs'], function(items) {
+    storage.get(['answers', 'costs', 'post_after_select'], function(items) {
 
         if (items.answers) {
             items.answers.forEach(function(item, i, arr) {
@@ -52,6 +53,10 @@ function loadChanges() {
                 appendCost(item);
             });
             message('Стоимости загружены!');
+        }
+
+        if(items.post_after_select) {
+            $('#post_after_select').attr('checked', 'checked');
         }
     });
 }
