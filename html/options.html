@@ -4,60 +4,57 @@
 <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="../img/icon.png" />
+     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
     <title>Freelance.ru Helper</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
+    <style type="text/css">
+        .message{
+              position: fixed;
+              background: #d9edf7;
+              z-index: 10;
+              width: 100%;
         }
-
-        label {
-            display: block;
-        }
-
-        textarea {
-            font-family: monospace;
-        }
-
-        .message {
-            height: 20px;
-            background: #eee;
-            padding: 5px;
-        }
-
-        #answer {
-            width: 97%;
-            padding: 10px;
-        }
+        body {background: #eee;}
     </style>
 </head>
 
 <body>
-    <div class="message"></div>
+<div class="container-fluid text-center">
+    <div class="message info"></div>
     <h3>Freelance.ru Helper <img src="../img/icon.png" /></h3>
 
-    <div style="background: #eee;" id="answers">
+    <div id="answers">
         <h4>Варианты ответа</h4>
     </div>
 
+    <hr />
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="post_after_select">
+        Отправить заявку после выбора варианта
+      </label>
+    </div>
+    <hr />
     <p>
-        <a href="#" id="add_answer">Добавить вариант</a>
-        <hr />
-        <label for="post_after_select">Отправить заявку после выбора варианта</label><input type="checkbox" id="post_after_select" />
+        <button id="add_answer" class="btn btn-primary">Добавить вариант</button>
     </p>
 
-    <div style="background: #eee;" id="costs">
+    
+
+    <div id="costs">
         <h4>Варианты стоимости</h4>
     </div>
     <p>
-        <a href="#" id="add_cost">Добавить вариант</a>
+        <button class="btn btn-primary" id="add_cost">Добавить вариант</button>
         <hr />
     </p>
     <br/>
-
-    <button class="submit">Сохранить</button>
-    <button class="reset">Сбросить</button>
+    <p>
+        <button class="submit btn btn-success">Сохранить</button>
+        <button class="reset btn btn-danger">Сбросить</button>
+    </p>
+    <hr />
+</div>
     <script src="../js/options.js"></script>
 </body>
 

@@ -10,8 +10,8 @@ var storage = chrome.storage.local;
 var message = document.querySelector('#message');
 
 var optionsUrl = chrome.extension.getURL('html/options.html');
-message.innerHTML = '<a target="_blank" href="' +
-        optionsUrl + '">Настройте варианты ответов </a><p><a target="_blank" href="https://money.yandex.ru/to/410011947722590?comment=Freelance.ru-Helper">Поблагодарить автора</a></p>';
+message.innerHTML = '<p><a target="_blank" class="btn btn-primary" href="' +
+        optionsUrl + '">Настройте варианты ответов </a></p><p><a target="_blank" class="btn btn-success" href="https://money.yandex.ru/to/410011947722590?comment=Freelance.ru-Helper">Поблагодарить автора</a></p>';
 
 
 

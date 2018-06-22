@@ -31,11 +31,13 @@ function saveChanges() {
 }
 
 function appendAnswer(val) {
-    $("#answers").append('<div><p><textarea id="answer" rows=3 placeholder="Обращайтесь">' + val + '</textarea> <a href="#" id="remove">Удалить</a><hr /></p></div>');
+    $("#answers").append('<div class="form-inline"><p><textarea class="form-control" id="answer" rows=3 placeholder="Обращайтесь">' + val + 
+        '</textarea> <button id="remove" class="btn btn-danger">Удалить</button></p></div>');
 }
 
 function appendCost(val) {
-    $("#costs").append('<div><p><input id="cost" type="number" value="' + val + '" placeholder="1000"/> <a href="#" id="remove">Удалить</a><hr /></p></div>');
+    $("#costs").append('<div class="form-inline"><p><input id="cost" class="form-control" type="number" value="' + val + 
+        '" placeholder="1000"/> <button id="remove" class="btn btn-danger">Удалить</button></p></div>');
 }
 
 function loadChanges() {
@@ -58,6 +60,8 @@ function loadChanges() {
         if(items.post_after_select) {
             $('#post_after_select').attr('checked', 'checked');
         }
+
+        bind_remove();
     });
 }
 
@@ -78,11 +82,12 @@ function message(msg) {
 }
 
 function bind_remove() {
-    $('a#remove').click(function(el) {
+    $('button#remove').click(function(el) {
+        message('Удалено!');
         $(el.target).parent().parent().remove('*');
     });
 }
-bind_remove();
+
 
 $('#add_answer').click(function() {
     appendAnswer('');
