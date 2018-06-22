@@ -1,6 +1,7 @@
 {
   "name": "Freelance.ru Helper",
   "description": "Когда лень писать одно и тоже.",
+  "author": "Kolsha",
   "version": "1.0",
   "homepage_url": "https://kolsha.ru",
   "permissions": [
