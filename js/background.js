@@ -44,6 +44,9 @@ storage.get(['answers', 'costs', 'post_after_select'], function(items) {
 });
 
 
+$('p.note2').append('<a target=_blank href="' + chrome.extension.getURL('/html/options.html') + '" class="btn btn-info">Настройки ответов</a>');
+
+
 $.get(chrome.extension.getURL('/js/injected.js'),
     function(data) {
         var script = document.createElement("script");
